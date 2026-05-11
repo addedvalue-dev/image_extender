@@ -124,6 +124,9 @@ The application includes powerful AI image generation capabilities:
 ### Object Detection Interface
 ![Object Detection Tab](product_pics/Screenshot%202026-01-31%20183227.png)
 
+### Sound Settings and Mixing Interface
+![Sound Settings and Mixing Tab](product_pics/Screenshot%202026-02-01%20121319.png)
+
 4. **Configure sound settings**
    - Switch to the "Sound Settings" tab
    - Adjust parameters like:
@@ -131,9 +134,6 @@ The application includes powerful AI image generation capabilities:
      - Audio quality
      - License preferences
      - File format
-
-### Sound Settings and Mixing Interface
-![Sound Settings and Mixing Tab](product_pics/Screenshot%202026-02-01%20121319.png)
 
 5. **Create soundscape**
    - Go to the "Sound Creation" tab
@@ -147,8 +147,17 @@ The application includes powerful AI image generation capabilities:
    - Use playback controls to preview your soundscape
    - Export the final mix using the export options
 
+## Feedback System
+
+The application includes a feedback system to help improve the user experience:
+
 ### Feedback Interface
 ![Feedback Tab](product_pics/Screenshot%202026-01-31%20190249.png)
+
+- **Rating System**: Rate your soundscape creation from 1-5 stars
+- **Feedback Comments**: Provide detailed feedback about your experience
+- **Automatic Logging**: System automatically logs creation data for analysis
+- **Email Integration**: Feedback can be sent via email for development improvement
 
 ## Directory Structure
 
