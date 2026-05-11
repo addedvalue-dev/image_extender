@@ -142,6 +142,7 @@ The application includes powerful AI image generation capabilities:
 
 ### Sound Creation Interface
 ![Sound Creation Tab](product_pics/Screenshot%202026-01-31%20183234.png)
+![Sound Creation Process](product_pics/Screenshot%202026-01-31%20190249.png)
 
 6. **Preview and export**
    - Use playback controls to preview your soundscape
@@ -152,7 +153,6 @@ The application includes powerful AI image generation capabilities:
 The application includes a feedback system to help improve the user experience:
 
 ### Feedback Interface
-![Feedback Tab](product_pics/Screenshot%202026-01-31%20190249.png)
 
 - **Rating System**: Rate your soundscape creation from 1-5 stars
 - **Feedback Comments**: Provide detailed feedback about your experience
