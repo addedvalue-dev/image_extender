@@ -132,6 +132,9 @@ The application includes powerful AI image generation capabilities:
      - License preferences
      - File format
 
+### Sound Settings and Mixing Interface
+![Sound Settings and Mixing Tab](product_pics/Screenshot%202026-02-01%20121319.png)
+
 5. **Create soundscape**
    - Go to the "Sound Creation" tab
    - Click "Download Sounds and Create Mix"
