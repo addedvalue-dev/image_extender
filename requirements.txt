@@ -1,0 +1,33 @@
+# Core dependencies
+numpy>=1.21.0
+requests>=2.25.0
+Pillow>=8.0.0
+
+# Audio processing
+pydub>=0.25.0
+soundfile>=0.10.0
+librosa>=0.8.0
+scipy>=1.7.0
+pyloudnorm>=0.1.0
+pedalboard>=0.6.0
+sounddevice>=0.4.0
+
+# Advanced audio processing
+pyroomacoustics>=0.4.0
+nara-wpe>=0.2.0
+
+# Computer vision
+opencv-python>=4.5.0
+mediapipe>=0.8.0
+
+# AI/ML
+openai>=1.0.0
+
+# Standard library (included with Python, but listed for completeness)
+# os, sys, base64, json, re, ast, time, threading, random, datetime, csv
+# tkinter (included with Python)
+# smtplib, email (included with Python)
+# io, tempfile, warnings (included with Python)
+
+# Optional: For enhanced audio codec support
+# ffmpeg-python>=0.2.0  # Uncomment if needed for additional audio formats
