@@ -619,7 +619,7 @@ def get_openai_fallback_tag(tag):
         return None
     
 def design_eq_for_masking(masker_energy, maskee_energy, filterbank):
-    """EQ settings für maskierungs reduction"""
+    """EQ settings for masking reduction"""
     eq_settings = []
     print("\nMasking Analysis Results:")
     print(f"{'Freq':<8} {'Masker(dB)':<10} {'Target(dB)':<10} {'Diff(dB)':<10} {'Action':<12}")
@@ -636,10 +636,10 @@ def design_eq_for_masking(masker_energy, maskee_energy, filterbank):
         valid_bands += 1
         diff_db = e1 - e2
 
-        # Nur Bänder betrachten, in denen beide Signale vorhanden sind
+        # Only consider bands where both signals are present
         if e1 > -80 and e2 > -80:
-            # EQ nur anwenden, wenn Maskierer deutlich lauter ist
-            if diff_db > 8:  # Threshold für masking erkennung
+            # Only apply EQ if masker is significantly louder
+            if diff_db > 8:  # Threshold for masking detection
                 reduction = min(MAX_GAIN_REDUCTION, 0.3 * diff_db)
                 eq_settings.append({
                     'type': 'peak',
@@ -809,7 +809,7 @@ Prefer Rating: {creation_data['settings'].get('prefer_rating', 'N/A')}
         server.send_message(msg)
         server.quit()
 
-        print(f"✅ Feedback sent successfully to {EMAIL_CONFIG['receiver_email']}")
+        print(f"Feedback sent successfully to {EMAIL_CONFIG['receiver_email']}")
         
         # Clean up log file
         try:
@@ -820,7 +820,7 @@ Prefer Rating: {creation_data['settings'].get('prefer_rating', 'N/A')}
         return True
 
     except Exception as e:
-        print(f"❌ Error sending feedback: {e}")
+        print(f"Error sending feedback: {e}")
         return False
 
 # ----------------------------------------------------------------------
@@ -1125,7 +1125,7 @@ def apply_reverb_to_mix():
     
     # Note: This function needs to be called from within the ImageExtenderApp class
     # where it can access the current mix through the instance
-    print("❌ apply_reverb_to_mix should be called from class instance")
+    print("apply_reverb_to_mix should be called from class instance")
     return False
 
 def remove_reverb_from_mix():
@@ -1353,7 +1353,7 @@ class ImageExtenderApp:
         # Headphones recommendation label - modern version
         headphones_label = tk.Label(
             main_container,
-            text="🎧 Use headphones for optimal experience",
+            text="Use headphones for optimal experience",
             bg=self.MODERN_SECONDARY,
             fg=self.MODERN_FG,
             font=("Segoe UI", 12),
@@ -1645,11 +1645,11 @@ class ImageExtenderApp:
             global IMAGE_FILE
             IMAGE_FILE = "generated_image.png"
 
-             # In images-Ordner speichern
+             # Save in images folder
             images_dir = os.path.join(BASE_DIR, "images")
             os.makedirs(images_dir, exist_ok=True)
             
-            # Eindeutigen Dateinamen erstellen
+            # Create unique filename
             timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
             filename = f"generated_{timestamp}.png"
             IMAGE_FILE = os.path.join(images_dir, filename)
@@ -2274,7 +2274,7 @@ class ImageExtenderApp:
         
         rating_icon = tk.Label(
             rating_frame,
-            text="⭐",
+            text="*",
             bg=self.MODERN_SECONDARY,
             fg=self.MODERN_HIGHLIGHT,
             font=("Segoe UI", 14)
@@ -2321,7 +2321,7 @@ class ImageExtenderApp:
         
         samplerate_icon = tk.Label(
             samplerate_frame,
-            text="🎵",
+            text="Audio",
             bg=self.MODERN_SECONDARY,
             fg=self.MODERN_HIGHLIGHT,
             font=("Segoe UI", 14)
@@ -2446,7 +2446,7 @@ class ImageExtenderApp:
         
         filetype_icon = tk.Label(
             filetype_frame,
-            text="💾",
+            text="File",
             bg=self.MODERN_SECONDARY,
             fg=self.MODERN_HIGHLIGHT,
             font=("Segoe UI", 14)
@@ -2486,7 +2486,7 @@ class ImageExtenderApp:
         # Modern save button
         save_button = tk.Button(
             save_button_container,
-            text="💾 Save Settings",
+            text="Save Settings",
             command=self.save_sound_settings,
             bg=self.MODERN_ACCENT,
             fg=self.MODERN_FG,
@@ -2683,7 +2683,7 @@ class ImageExtenderApp:
         
         self.download_button = tk.Button(
             action_container,
-            text="🎵 Download & Create Soundscape",
+            text="Download & Create Soundscape",
             command=self.download_and_mix_sounds,
             bg=self.MODERN_ACCENT,
             fg=self.MODERN_FG,
@@ -2879,7 +2879,7 @@ class ImageExtenderApp:
         
         export_btn = tk.Button(
             button_row,
-            text="💾 Export Mix",
+            text="Export Mix",
             command=self._export_mix,
             bg=self.MODERN_SECONDARY,
             fg=self.MODERN_FG,
@@ -3053,7 +3053,7 @@ class ImageExtenderApp:
         
         # Update log with settings
         if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-            self.daw_text.insert(tk.END, "📋 Using settings:\n")
+            self.daw_text.insert(tk.END, "Using settings:\n")
             self.daw_text.insert(tk.END, f"  • Sample Rate: {samplerate}\n")
             self.daw_text.insert(tk.END, f"  • Duration: {duration_min}-{duration_max}s\n")
             self.daw_text.insert(tk.END, f"  • License: {license_type}\n")
@@ -3097,7 +3097,7 @@ class ImageExtenderApp:
         # Modern header
         header_label = tk.Label(
             progress_window,
-            text="🎵 Creating Soundscape",
+            text="Creating Soundscape",
             bg=self.MODERN_BG,
             fg=self.MODERN_FG,
             font=("Segoe UI", 14, "bold"),
@@ -3223,7 +3223,7 @@ class ImageExtenderApp:
             hierarchy_data = load_tag_hierarchy(csv_path)
             if not hierarchy_data:
                 if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                    self.daw_text.insert(tk.END, "⚠️ No tag hierarchy file found\n")
+                    self.daw_text.insert(tk.END, "No tag hierarchy file found\n")
         
         # Update status - searching for atmosphere
         self.root.after(0, lambda: status_label.config(text="Searching for atmosphere sound..."))
@@ -3232,7 +3232,7 @@ class ImageExtenderApp:
         
         # Update log
         if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-            self.daw_text.insert(tk.END, "\n🌍 Searching for atmosphere sound...\n")
+            self.daw_text.insert(tk.END, "\nSearching for atmosphere sound...\n")
             self.daw_text.see(tk.END)
         
         # 1. Search for atmosphere sound (scene_and_location)
@@ -3258,7 +3258,7 @@ class ImageExtenderApp:
                     atmo_name = sound['name']
                     
                     if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                        self.daw_text.insert(tk.END, f"✅ Found: '{atmo_name}'\n")
+                        self.daw_text.insert(tk.END, f"Found: '{atmo_name}'\n")
                         self.daw_text.insert(tk.END, f"  • Rating: {sound.get('avg_rating', '?'):.1f}\n")
                         self.daw_text.insert(tk.END, f"  • Duration: {sound.get('duration', '?'):.1f}s\n\n")
                         self.daw_text.see(tk.END)
@@ -3266,7 +3266,7 @@ class ImageExtenderApp:
                     processed_sounds.append((atmo_sound, atmo_name, -1))
             else:
                 if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                    self.daw_text.insert(tk.END, "⚠️ No atmosphere sound found\n\n")
+                    self.daw_text.insert(tk.END, "No atmosphere sound found\n\n")
                     self.daw_text.see(tk.END)
         
         # Update progress
@@ -3283,7 +3283,7 @@ class ImageExtenderApp:
             all_tags = list(recognized_tags) if hasattr(recognized_tags, '__iter__') else []
         
         if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-            self.daw_text.insert(tk.END, "🎵 Processing object sounds:\n")
+            self.daw_text.insert(tk.END, "Processing object sounds:\n")
             self.daw_text.see(tk.END)
         
         for index, original_tag in enumerate(all_tags):
@@ -3307,7 +3307,7 @@ class ImageExtenderApp:
             
             if not sound:
                 if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                    self.daw_text.insert(tk.END, f"❌ No sound found\n")
+                    self.daw_text.insert(tk.END, f"No sound found\n")
                     self.daw_text.see(tk.END)
                 continue
             
@@ -3326,7 +3326,7 @@ class ImageExtenderApp:
                                             importance_value=object_importance, filterbank=filterbank)
             if not processed:
                 if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                    self.daw_text.insert(tk.END, f"❌ Error processing sound\n")
+                    self.daw_text.insert(tk.END, f"Error processing sound\n")
                     self.daw_text.see(tk.END)
                 continue
                 
@@ -3344,7 +3344,7 @@ class ImageExtenderApp:
             processed_sounds.append((panned, sound['name'], index))
             
             if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                self.daw_text.insert(tk.END, f"✅ Found: '{sound['name']}'\n")
+                self.daw_text.insert(tk.END, f"Found: '{sound['name']}'\n")
                 self.daw_text.insert(tk.END, f"  • Rating: {sound.get('avg_rating', '?'):.1f}\n")
                 self.daw_text.insert(tk.END, f"  • Downloads: {sound.get('num_downloads', '?'):.1f}\n")
                 self.daw_text.insert(tk.END, f"  • Duration: {sound.get('duration', '?'):.1f}s\n")
@@ -3359,7 +3359,7 @@ class ImageExtenderApp:
         
         if not processed_sounds:
             if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-                self.daw_text.insert(tk.END, "\n❌ No sounds were processed successfully\n")
+                self.daw_text.insert(tk.END, "\nNo sounds were processed successfully\n")
                 self.daw_text.see(tk.END)
             return
         
@@ -3376,7 +3376,7 @@ class ImageExtenderApp:
             base_name = longest_name
         
         if hasattr(self, 'daw_text') and self.daw_text.winfo_exists():
-            self.daw_text.insert(tk.END, f"\n📊 Creating Timeline\n")
+            self.daw_text.insert(tk.END, f"\nCreating Timeline\n")
             self.daw_text.insert(tk.END, f"Base track: '{base_name}' ({base_duration/1000:.1f}s)\n\n")
             self.daw_text.see(tk.END)
         
@@ -4103,11 +4103,11 @@ class ImageExtenderApp:
             
             # Track type with color coding
             if track['is_atmo']:
-                track_type = "🌍"
+                track_type = "Atmo"
                 type_color = self.MODERN_HIGHLIGHT
                 type_text = "Atmosphere"
             else:
-                track_type = "🎵"
+                track_type = "Audio"
                 type_color = self.MODERN_ACCENT
                 type_text = "Object"
             
@@ -4455,7 +4455,7 @@ class ImageExtenderApp:
                 samples = np.array(mix_to_play.get_array_of_samples(), dtype=np.float32)
                 if len(samples) == 0:
                     print("ERROR: No samples in mix!")
-                    self.root.after(0, lambda: self.daw_text.insert(tk.END, "❌ ERROR: Mix has no audio data!\n"))
+                    self.root.after(0, lambda: self.daw_text.insert(tk.END, "ERROR: Mix has no audio data!\n"))
                     self.root.after(0, lambda: self.daw_text.see(tk.END))
                     is_playing = False
                     return
