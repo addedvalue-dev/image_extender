@@ -1,6 +1,6 @@
 # Image Extender v0.1.1 - Local Version
 
-A Python application that extends images with sound design capabilities using AI-powered object detection and sound synthesis.
+A Python application that extends images with sound design capabilities using AI-powered object detection.
 
 ## Overview
 
