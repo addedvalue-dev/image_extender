@@ -531,7 +531,7 @@ def check_description_with_openai(description, tag, image_description):
         Image Description: "{image_description}"
 
         Return ONLY "MATCH" if the sound clearly represents the specified object/tag,
-        or "NO_MATCH" if the description mentions the word but the sound doesn't actually represent that object.
+        or "NO_MATCH" if the description mentions the word but the sound doesn't actually represent that object. In case of art/paintings you can be more open minded and also accept atmospheric/abstract sounds that could match the vibe.
 
         Consider:
         - Does the sound directly represent the object? (e.g., "car engine" for "car")
