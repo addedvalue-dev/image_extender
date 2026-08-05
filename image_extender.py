@@ -152,11 +152,11 @@ audio_thread = None
 
 # Email settings
 EMAIL_CONFIG = {
-    'smtp_server': 'smtp.gmail.com',
-    'smtp_port': 587,
-    'sender_email': '',  # Change this to your email
-    'sender_password': '',  # Change this to your app password
-    'receiver_email': 'image.extender.feedback@gmail.com' 
+    'smtp_server': os.getenv('SMTP_SERVER', 'smtp.gmail.com'),
+    'smtp_port': int(os.getenv('SMTP_PORT', 587)),
+    'sender_email': os.getenv('SENDER_EMAIL'),
+    'sender_password': os.getenv('SENDER_PASSWORD'),
+    'receiver_email': 'image.extender.feedback@gmail.com'
 }
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__)) if '__file__' in globals() else os.getcwd()
